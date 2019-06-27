@@ -1,0 +1,45 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+# Informal website of CREDS Theme 2
+
+To go onto the main website after testing.
+
+Website was created as follows
+
+```{r, engine='bash', eval=FALSE}
+curl -u robinlovelace https://api.github.com/orgs/creds2/repos -d '{"name":"creds2.github.io", "description":"CREDS Website", "private": false, "has_issues": true, "has_projects": true, "has_wiki":false }'
+curl -u robinlovelace https://api.github.com/orgs/creds2/repos -d '{"name":"website", "description":"CREDS Website source code", "private": false, "has_issues": true, "has_projects": true, "has_wiki":false }'
+```
+
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of website is to ...
+
+What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
+
+```{r cars}
+summary(cars)
+```
+
+You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date.
+
+You can also embed plots, for example:
+
+```{r pressure, echo = FALSE}
+plot(pressure)
+```
+
+In that case, don't forget to commit and push the resulting figure files, so they display on GitHub!
