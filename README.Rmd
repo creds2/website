@@ -15,6 +15,17 @@ knitr::opts_chunk$set(
 
 To go onto the main website after testing.
 
+To edit the homepage edit `index.Rmd`.
+
+To create a new post, do:
+
+```{r, eval=FALSE}
+blogdown::new_post()
+```
+
+
+# How it was created
+
 Website was created as follows
 
 ```{r, engine='bash', eval=FALSE}
