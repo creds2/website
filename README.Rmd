@@ -20,7 +20,33 @@ Website was created as follows
 ```{r, engine='bash', eval=FALSE}
 curl -u robinlovelace https://api.github.com/orgs/creds2/repos -d '{"name":"creds2.github.io", "description":"CREDS Website", "private": false, "has_issues": true, "has_projects": true, "has_wiki":false }'
 curl -u robinlovelace https://api.github.com/orgs/creds2/repos -d '{"name":"website", "description":"CREDS Website source code", "private": false, "has_issues": true, "has_projects": true, "has_wiki":false }'
+git init
+git remote add origin git@github.com:creds2/website
+git status
+git add -A
+git commit -am 'Initialise website repo'
+git push --set-upstream master
+git push origin master
 ```
+
+Then in R:
+
+```{r, eval=FALSE}
+devtools::install_github("rstudio/blogdown")
+dir.create("site_temp")
+blogdown::new_site(dir = "site_temp")
+list.files("site_temp/")
+system("mv -v site_temp/* .")
+```
+
+And to serve:
+
+```{r}
+blogdown::build_site()
+blogdown::serve_site()
+```
+
+
 
 
 <!-- badges: start -->
